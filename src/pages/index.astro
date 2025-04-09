@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<title>Sterben</title>
+<Layout>
+  <main>
+    <div class="container">
+      <img src="/src/assets/sigilism.svg" class="sigils" alt="Sigilism" />
+      <img src="/src/assets/sigilism.svg" class="sigils" style="transform: scaleX(-1);" alt="Sigilism" />
+    </div>
+  </main>
+</Layout>
+
+<style>
+	.container {
+	  display: flex;
+	  flex-direction: row;
+	  align-items: center;
+	  justify-content: center;
+	  min-height: 100vh;
+	  padding: 2rem;
+	}
+	
+	.sigils {
+	  width: 40%;
+	  height: 50%;
+	  object-fit: cover;
+	}
+  
+	/*
+	#d1d1d1 -> Text
+	#0F0F0F -> Background
+	#43119a -> Primary
+	#dedcff -> Secondary
+	#922dff -> Accent
+	*/
+  </style>
