@@ -6,7 +6,7 @@ export default defineConfig({
   site: "https://hsterben.github.io",
   base: '/sterben-dev/',
   build: {
-    assets: 'assets',
+    assets: 'assets/[name].[hash][ext]',
   }
 });
 
