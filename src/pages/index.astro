@@ -1,17 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <Layout>
   <main>
     <div class="container">
       <img
-        src="/assets/sigilism.svg"
+        src={`${baseUrl}assets/sigilism.svg`}
         class="sigils"
         alt="Sigilism"
       />
       <img
-        src="/assets/sigilism.svg"
+        src={`${baseUrl}assets/sigilism.svg`}
         class="sigils"
         style="transform: scaleX(-1);"
         alt="Sigilism"
