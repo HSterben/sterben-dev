@@ -5,6 +5,7 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   site: "https://hsterben.github.io",
   base: '/sterben-dev/',
+  trailingSlash: 'ignore',
   build: {
     assets: 'assets',
   }
