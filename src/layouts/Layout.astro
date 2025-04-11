@@ -1,25 +1,120 @@
+---
+const baseUrl = import.meta.env.BASE_URL;
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href="/assets/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Sterben</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href=`${baseUrl}assets/logo.png` />
+    <meta name="generator" content={Astro.generator} />
+    <title>Sterben</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/">
+        <div class="nav-brand">
+          <img
+            src={`${baseUrl}assets/logo.png`}
+            alt="Logo"
+            class="nav-logo"
+            style="margin: 0 0.5rem 0 0.5rem;"
+          />
+          <span class="nav-brand-text">Sterben</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href=`/about`>About</a>
+        <a href=`/work`>Work</a>
+        <a href=`/contact`>Contact</a>
+      </div>
+    </nav>
+    <slot />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		height: auto;
-		background: #0F0F0F;
-		color: #D1D1D1:
-	}
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    background: #0f0f0f;
+    color: #d1d1d1;
+
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 650;
+    font-style: normal;
+  }
+
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    font-size: 1.5rem;
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transform: translateY(-100%);
+    animation: slideDown 1s ease forwards;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #d1d1d1;
+  }
+
+  .nav-logo {
+    height: 3rem;
+    width: auto;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 4rem;
+  }
+
+  .nav-links a {
+    color: #d1d1d1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #922dff;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
 </style>
