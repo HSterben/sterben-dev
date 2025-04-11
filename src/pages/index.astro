@@ -3,10 +3,10 @@ import Layout from "../layouts/Layout.astro";
 
 const baseUrl = import.meta.env.BASE_URL;
 ---
-
+<script src={`${baseUrl}assets/indexAnimations.js`}></script>
 <Layout>
   <main>
-    <div class="container">
+    <div class="container" style="margin-top: 6.5rem;">
       <img
         src={`${baseUrl}assets/sigilism.svg`}
         class="sigils"
@@ -19,6 +19,10 @@ const baseUrl = import.meta.env.BASE_URL;
         alt="Sigilism"
       />
     </div>
+    <hr>
+    <div class="container">
+      
+    </div>
   </main>
 </Layout>
 
@@ -28,13 +32,13 @@ const baseUrl = import.meta.env.BASE_URL;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 50vh;
     padding: 2rem;
   }
 
   .sigils {
-    width: 45%;
-    height: 50%;
+    width: 50%;
+    height: 60%;
     object-fit: cover;
     user-select: none;
     -webkit-user-drag: none;
