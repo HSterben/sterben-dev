@@ -6,6 +6,27 @@ const version = Date.now(); // This will change on each build
 ---
 
 <script src={`${baseUrl}assets/indexAnimations.js`}></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sigils = document.querySelectorAll<HTMLObjectElement>('.sigils');
+    const content = document.querySelector<HTMLElement>('.content');
+    
+    // Hide content initially
+    if (content) content.style.display = 'none';
+    
+    // Wait for all SVGs to load
+    let loadedCount = 0;
+    sigils.forEach(sigil => {
+      sigil.addEventListener('load', () => {
+        loadedCount++;
+        if (loadedCount === sigils.length) {
+          // All SVGs loaded, show content
+          if (content) content.style.display = '';
+        }
+      });
+    });
+  });
+</script>
 <Layout>
   <main>
     <div class="container" style="margin-top: 6.5rem;">
@@ -22,8 +43,8 @@ const version = Date.now(); // This will change on each build
       ></object>
     </div>
     <hr>
-    <div class="container">
-      
+    <div class="container content">
+      <p>hello there</p>
     </div>
   </main>
 </Layout>
