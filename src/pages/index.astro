@@ -9,17 +9,17 @@ const version = Date.now(); // This will change on each build
 <Layout>
   <main>
     <div class="container" style="margin-top: 6.5rem;">
-      <img
-        src={`${baseUrl}assets/sigilism.svg?v=${version}`}
+      <object
+        data={`${baseUrl}assets/sigilism.svg`}
+        type="image/svg+xml"
         class="sigils"
-        alt="Sigilism"
-      />
-      <img
-        src={`${baseUrl}assets/sigilism.svg?v=${version}`}
+      ></object>
+      <object
+        data={`${baseUrl}assets/sigilism.svg`}
+        type="image/svg+xml"
         class="sigils"
         style="transform: scaleX(-1);"
-        alt="Sigilism"
-      />
+      ></object>
     </div>
     <hr>
     <div class="container">
