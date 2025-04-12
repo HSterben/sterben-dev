@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 
 const baseUrl = import.meta.env.BASE_URL;
+const version = Date.now(); // This will change on each build
 ---
 
 <script src={`${baseUrl}assets/indexAnimations.js`}></script>
@@ -9,12 +10,12 @@ const baseUrl = import.meta.env.BASE_URL;
   <main>
     <div class="container" style="margin-top: 6.5rem;">
       <img
-        src={`${baseUrl}assets/sigilism.svg`}
+        src={`${baseUrl}assets/sigilism.svg?v=${version}`}
         class="sigils"
         alt="Sigilism"
       />
       <img
-        src={`${baseUrl}assets/sigilism.svg`}
+        src={`${baseUrl}assets/sigilism.svg?v=${version}`}
         class="sigils"
         style="transform: scaleX(-1);"
         alt="Sigilism"

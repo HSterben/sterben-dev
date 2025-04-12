@@ -7,17 +7,6 @@ export default defineConfig({
   base: '/sterben-dev/',
   build: {
     assets: 'assets',
-  },
-  vite: {
-    build: {
-      rollupOptions: {
-        output: {
-          entryFileNames: 'entry-[name]-[hash].js',
-          chunkFileNames: 'chunks/chunk-[name]-[hash].js',
-          assetFileNames: 'assets/asset-[name]-[hash][extname]'
-        }
-      }
-    }
   }
 });
 
