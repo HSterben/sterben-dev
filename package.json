@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.6.1"
+    "astro": "^5.6.1",
+    "framer-motion": "^12.7.4"
   }
 }

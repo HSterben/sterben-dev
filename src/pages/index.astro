@@ -6,13 +6,13 @@ const baseUrl = import.meta.env.BASE_URL;
 
 <script src={`${baseUrl}assets/indexAnimations.js`}></script>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const sigils = document.querySelectorAll('.sigils');
+  document.addEventListener("DOMContentLoaded", () => {
+    const sigils = document.querySelectorAll(".sigils");
     const timestamp = Date.now();
-    
-    sigils.forEach(sigil => {
-      const currentSrc = sigil.getAttribute('src');
-      sigil.setAttribute('src', `${currentSrc}?v=${timestamp}`);
+
+    sigils.forEach((sigil) => {
+      const currentSrc = sigil.getAttribute("src");
+      sigil.setAttribute("src", `${currentSrc}?v=${timestamp}`);
     });
   });
 </script>
@@ -26,8 +26,14 @@ const baseUrl = import.meta.env.BASE_URL;
         style="transform: scaleX(-1);"
       />
     </div>
-    <div class="container content">
-      <p>hello there</p>
+    <div>
+      <div class="content" style="border-top: 0.1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem;">
+        <span id="quote">"Blink, and the world changes; <br>stare, and you change with it."</span>
+        <span style="width: 20%;">I admire the art of programming and appreciate details behind system design.</span>
+      </div>
+      <div class="content">
+        <span class="subtitle" style="width: 35%;">The Blueprint of Digital Progress</span>
+      </div>
     </div>
   </main>
 </Layout>
@@ -38,7 +44,6 @@ const baseUrl = import.meta.env.BASE_URL;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    min-height: 50vh;
     padding: 2rem;
   }
 
@@ -51,6 +56,29 @@ const baseUrl = import.meta.env.BASE_URL;
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
+  }
+
+  #quote {
+    width: 50%;
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #d1d1d1;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 20vh;
+    margin: 10px 150px;
+    padding: 0;
+  }
+
+  .subtitle {
+    color: #43119a;
+    font-size: 2.3rem;
+    font-weight: 500;
   }
 
   /*

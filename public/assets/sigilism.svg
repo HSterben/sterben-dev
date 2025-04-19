@@ -10,7 +10,7 @@
     #sigil-path {
       stroke-dasharray: 15000;
       stroke-dashoffset: 15000;
-      animation: draw 2.5s ease-in-out forwards 0.7s;
+      animation: draw 2.5s ease-in-out forwards 0.75s;
       fill-opacity: 0;
       stroke: #D1D1D1;
       stroke-width: 2;
