@@ -1,5 +1,6 @@
 ---
 const baseUrl = import.meta.env.BASE_URL;
+console.log(baseUrl);
 ---
 
 <!doctype html>
@@ -7,23 +8,23 @@ const baseUrl = import.meta.env.BASE_URL;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href=`${baseUrl}assets/logo.png` />
+    <link rel="icon" type="image/png" href={`${baseUrl}assets/logo.png`} />
     <meta name="generator" content={Astro.generator} />
     <title>Sterben</title>
   </head>
   <body>
     <nav class="navbar">
-      <a href="/">
+      <a href={baseUrl}>
         <div class="nav-brand">
           <img src={`${baseUrl}assets/logo.png`} alt="Logo" class="nav-logo" />
           <span class="nav-brand-text">sterben</span>
         </div>
       </a>
       <div class="nav-links">
-        <a href="/">Home</a>
-        <a href=`/about`>About</a>
-        <a href=`/work`>Work</a>
-        <a href=`/contact`>Contact</a>
+        <a href={baseUrl}>Home</a>
+        <a href={`${baseUrl}about`}>About</a>
+        <a href={`${baseUrl}work`}>Work</a>
+        <a href={`${baseUrl}contact`}>Contact</a>
       </div>
     </nav>
     <slot />

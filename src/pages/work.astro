@@ -1,0 +1,170 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const baseUrl = import.meta.env.BASE_URL;
+
+const projects = [
+  {
+    title: "Project 1",
+    subtitle: "Web Development",
+    description: "A modern web application built with cutting-edge technologies.",
+    image: "/images/project1.jpg",
+    imageLeft: true
+  },
+  {
+    title: "Project 2",
+    subtitle: "Mobile App",
+    description: "An innovative mobile application solving real-world problems.",
+    image: "/images/project2.jpg",
+    imageLeft: false
+  },
+  // Add more projects as needed
+];
+---
+
+<Layout>
+  <main>
+    <div class="title-container">
+      <h1 class="about-title animate-slide-in" style="animation-delay: 0.4s">My Work</h1>
+    </div>
+
+    <div class="projects-container">
+      {projects.map((project, index) => (
+        <div class="project-card animate-float-up" style={`animation-delay: ${0.5 + index * 0.1}s`}>
+          {project.imageLeft ? (
+            <>
+              <div class="project-image">
+                <img src={project.image} alt={project.title} />
+              </div>
+              <div class="project-content">
+                <h2>{project.title}</h2>
+                <h3>{project.subtitle}</h3>
+                <p>{project.description}</p>
+              </div>
+            </>
+          ) : (
+            <>
+              <div class="project-content">
+                <h2>{project.title}</h2>
+                <h3>{project.subtitle}</h3>
+                <p>{project.description}</p>
+              </div>
+              <div class="project-image">
+                <img src={project.image} alt={project.title} />
+              </div>
+            </>
+          )}
+        </div>
+      ))}
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 8rem 150px 0;
+  }
+
+  .about-title {
+    font-size: 4rem;
+    font-weight: 500;
+    color: #d1d1d1;
+    opacity: 0;
+    margin-bottom: 0;
+  }
+
+  .projects-container {
+    margin: 0 150px;
+    padding: 2rem 0;
+  }
+
+  .project-card {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    opacity: 0;
+  }
+
+  .project-image {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+
+  .project-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .project-content h2 {
+    color: #d1d1d1;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-content h3 {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-content p {
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes floatUp {
+    from {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  .animate-float-up {
+    animation: floatUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  @media (max-width: 768px) {
+    .project-card {
+      flex-direction: column;
+    }
+
+    .project-image {
+      min-width: 100%;
+    }
+  }
+</style>
+
